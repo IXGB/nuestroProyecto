@@ -14,7 +14,7 @@ public class Consulta {
 	private int prioridadDeTriaje; //Del 1-3 siendo el 1 de mayor prioridad
 
 	public Consulta(Date fchConsulta, Doctor miDoctor, String descripcion, Enfermedad enfermedad, boolean curado,
-			Vacuna miVacuna) {
+			Vacuna miVacuna, String triaje, int prioridadDeTriaje) {
 		super();
 		this.fchConsulta = fchConsulta;
 		this.miDoctor = miDoctor;
@@ -22,6 +22,8 @@ public class Consulta {
 		this.enfermedad = enfermedad;
 		this.curado = curado;
 		this.miVacuna = miVacuna;
+		this.triaje = triaje;
+		this.prioridadDeTriaje = prioridadDeTriaje;
 	}
 
 	public Date getFchConsulta() {
@@ -70,6 +72,22 @@ public class Consulta {
 
 	public void setMiVacuna(Vacuna miVacuna) {
 		this.miVacuna = miVacuna;
+	}
+
+	public String getTriaje() {
+		return triaje;
+	}
+
+	public void setTriaje(String triaje) {
+		this.triaje = triaje;
+	}
+
+	public int getPrioridadDeTriaje() {
+		return prioridadDeTriaje;
+	}
+
+	public void setPrioridadDeTriaje(int prioridadDeTriaje) {
+		this.prioridadDeTriaje = prioridadDeTriaje;
 	}
 
 }
