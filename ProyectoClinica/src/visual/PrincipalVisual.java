@@ -7,8 +7,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class ejemplo extends JFrame {
+public class PrincipalVisual extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
@@ -18,7 +22,7 @@ public class ejemplo extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ejemplo frame = new ejemplo();
+					PrincipalVisual frame = new PrincipalVisual();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -30,7 +34,7 @@ public class ejemplo extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ejemplo() {
+	public PrincipalVisual() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
