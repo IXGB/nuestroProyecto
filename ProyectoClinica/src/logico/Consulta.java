@@ -10,6 +10,8 @@ public class Consulta {
 	private Enfermedad enfermedad;
 	private boolean curado;
 	private Vacuna miVacuna;
+	private String triaje; //Motivo de consulta
+	private int prioridadDeTriaje; //Del 1-3 siendo el 1 de mayor prioridad
 
 	public Consulta(Date fchConsulta, Doctor miDoctor, String descripcion, Enfermedad enfermedad, boolean curado,
 			Vacuna miVacuna) {
