@@ -8,7 +8,7 @@ public class Paciente extends Persona {
 	private float peso;
 	private float estatura;
 	
-	public Paciente(String id, String cedula, String nombre, String telefono, String direccion, String sexo, String NHC, HistorialClinico historial, String tipoSangre, float peso, float estatura) {
+	public Paciente(String cedula, String nombre, String telefono, String direccion, String sexo, String NHC, HistorialClinico historial, String tipoSangre, float peso, float estatura) {
 		super(id, cedula, nombre, telefono, direccion, sexo);
 		this.NHC = NHC;
 		this.historial = historial;
