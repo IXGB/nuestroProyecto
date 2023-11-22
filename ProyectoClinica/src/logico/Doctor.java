@@ -6,9 +6,9 @@ public class Doctor extends Persona {
 	private String id;
 	
 	public Doctor(String cedula, String nombre, String telefono, String direccion, String sexo, String id, String especiaclizacion) {
-		super(id, cedula, nombre, telefono, direccion, sexo);
-		this.id = id;
-		this.especializacion = especializacion;
+		super(cedula, nombre, telefono, direccion, sexo);
+		this.setId(id);
+		this.setEspecializacion(especiaclizacion); 
 	}
 
 	public String getEspecializacion() {
@@ -17,6 +17,14 @@ public class Doctor extends Persona {
 
 	public void setEspecializacion(String especializacion) {
 		this.especializacion = especializacion;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 }
