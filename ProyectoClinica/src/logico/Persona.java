@@ -16,12 +16,6 @@ public abstract class Persona {
 		this.sexo = sexo;
 	}
 	
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
 	public String getCedula() {
 		return cedula;
 	}
