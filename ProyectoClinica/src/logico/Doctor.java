@@ -1,22 +1,21 @@
 package logico;
 
 public class Doctor extends Persona {
-
-	private String especializacion; //IS???
+	private String exequatur; //EXEQUATUR, especialidad
 	private String id;
 	
-	public Doctor(String cedula, String nombre, String telefono, String direccion, String sexo, String id, String especiaclizacion) {
+	public Doctor(String cedula, String nombre, String telefono, String direccion, String sexo, String id, String exequatur) {
 		super(cedula, nombre, telefono, direccion, sexo);
 		this.setId(id);
-		this.setEspecializacion(especiaclizacion); 
+		this.setExequatur(exequatur); 
 	}
 
-	public String getEspecializacion() {
-		return especializacion;
+	public String getExequatur() {
+		return exequatur;
 	}
 
-	public void setEspecializacion(String especializacion) {
-		this.especializacion = especializacion;
+	public void setExequatur(String exequatur) {
+		this.exequatur = exequatur;
 	}
 
 	public String getId() {
