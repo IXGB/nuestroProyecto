@@ -8,19 +8,17 @@ public class Consulta {
 	private Doctor miDoctor;
 	private String descripcion;
 	private Enfermedad enfermedad;
-	private boolean curado;
 	private Vacuna miVacuna;
 	private String triaje; //Motivo de consulta
 	private int prioridadDeTriaje; //Del 1-3 siendo el 1 de mayor prioridad
 
-	public Consulta(Doctor miDoctor, String descripcion, Enfermedad enfermedad, boolean curado,
+	public Consulta(Doctor miDoctor, String descripcion, Enfermedad enfermedad,
 			Vacuna miVacuna, String triaje, int prioridadDeTriaje) {
 		super();
 		fchConsulta = new Date();
 		this.miDoctor = miDoctor;
 		this.descripcion = descripcion;
 		this.enfermedad = enfermedad;
-		this.curado = curado;
 		this.miVacuna = miVacuna;
 		this.triaje = triaje;
 		this.prioridadDeTriaje = prioridadDeTriaje;
@@ -56,14 +54,6 @@ public class Consulta {
 
 	public void setEnfermedad(Enfermedad enfermedad) {
 		this.enfermedad = enfermedad;
-	}
-
-	public boolean isCurado() {
-		return curado;
-	}
-
-	public void setCurado(boolean curado) {
-		this.curado = curado;
 	}
 
 	public Vacuna getMiVacuna() {
