@@ -46,5 +46,18 @@ public abstract class Persona {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	
+	public boolean esMasculino() {
+		if(this.sexo.equalsIgnoreCase("Masculino"))
+		{
+			return true;
+		}
+		return false;
+	}
+	public boolean esFemenino() {
+		if(this.sexo.equalsIgnoreCase("Femenino"))
+		{
+			return true;
+		}
+		return false;
+	}
 }
