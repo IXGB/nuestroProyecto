@@ -16,7 +16,7 @@ public class Paciente extends Persona {
 		this.tipoSangre = tipoSangre;
 		this.peso = peso;
 		this.estatura = estatura;
-		this.setCurado(false);
+		this.curado = historial.estaCurado();
 	}
 	
 	public String getNhc() {
@@ -124,5 +124,4 @@ public class Paciente extends Persona {
 	public void setCurado(boolean curado) {
 		this.curado = curado;
 	}
-	
 }

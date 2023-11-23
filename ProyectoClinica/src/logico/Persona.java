@@ -47,5 +47,4 @@ public abstract class Persona {
 		this.sexo = sexo;
 	}
 	
-	
 }

@@ -40,6 +40,12 @@ public class HistorialClinico {
 		misEnfermedades.add(enfermedad);
 	}
 	
-
+	public boolean estaCurado() {
+		if(this.misEnfermedades.size()>0)
+		{
+			return false;
+		}
+		return true;
+	}
 	
 }
