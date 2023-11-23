@@ -76,6 +76,4 @@ public class Hospital {
 		}
 		return null;
 	}
-	
-
 }
