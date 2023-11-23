@@ -46,14 +46,8 @@ public class Hospital {
 	public void setMisEnfermedades(ArrayList<Enfermedad> misEnfermedades) {
 		this.misEnfermedades = misEnfermedades;
 	}
-
-	public static Hospital getElHospital() {
-		return elHospital;
+	
+	public void annadirPaciente(Paciente unPaciente) {
+		misPersonas.add(unPaciente);
 	}
-
-	public static void setElHospital(Hospital elHospital) {
-		Hospital.elHospital = elHospital;
-	}
-
-
 }
