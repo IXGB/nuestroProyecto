@@ -2,7 +2,7 @@ package logico;
 
 public class Paciente extends Persona {
 
-	private String nhc;
+	private String nhc; //Numero de historial clinico
 	private HistorialClinico historial;
 	private String tipoSangre;
 	private float peso;
@@ -19,11 +19,11 @@ public class Paciente extends Persona {
 		this.setCurado(false);
 	}
 	
-	public String getNHC() {
+	public String getNhc() {
 		return nhc;
 	}
 
-	public void setNHC(String nhc) {
+	public void setNhc(String nhc) {
 		this.nhc = nhc;
 	}
 
