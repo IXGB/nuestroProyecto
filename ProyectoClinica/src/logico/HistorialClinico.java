@@ -8,36 +8,38 @@ public class HistorialClinico {
 	ArrayList<Vacuna> misVacunas;
 	ArrayList<Enfermedad> misEnfermedades;
 	
-	public HistorialClinico(ArrayList<Consulta> misConsultas, ArrayList<Vacuna> misVacunas,
-			ArrayList<Enfermedad> misEnfermedades) {
+	public HistorialClinico() {
 		super();
-		this.misConsultas = misConsultas;
-		this.misVacunas = misVacunas;
-		this.misEnfermedades = misEnfermedades;
+		this.misConsultas = new ArrayList<>();
+		this.misVacunas = new ArrayList<>();
+		this.misEnfermedades = new ArrayList<>();
 	}
 
 	public ArrayList<Consulta> getMisConsultas() {
 		return misConsultas;
 	}
 
-	public void setMisConsultas(ArrayList<Consulta> misConsultas) {
-		this.misConsultas = misConsultas;
-	}
-
 	public ArrayList<Vacuna> getMisVacunas() {
 		return misVacunas;
 	}
 
-	public void setMisVacunas(ArrayList<Vacuna> misVacunas) {
-		this.misVacunas = misVacunas;
-	}
 
 	public ArrayList<Enfermedad> getMisEnfermedades() {
 		return misEnfermedades;
 	}
-
-	public void setMisEnfermedades(ArrayList<Enfermedad> misEnfermedades) {
-		this.misEnfermedades = misEnfermedades;
+	
+	public void insertarVacuna(Vacuna vacuna) {
+		misVacunas.add(vacuna);
 	}
+	
+	public void insertarConsulta(Consulta consulta) {
+		misConsultas.add(consulta);
+	}
+	
+	public void insertarEnfermedad(Enfermedad enfermedad) {
+		misEnfermedades.add(enfermedad);
+	}
+	
+
 	
 }

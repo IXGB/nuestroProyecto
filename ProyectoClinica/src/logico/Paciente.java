@@ -2,28 +2,27 @@ package logico;
 
 public class Paciente extends Persona {
 
-	private String NHC;
+	private String nHC;
 	private HistorialClinico historial;
 	private String tipoSangre;
 	private float peso;
 	private float estatura;
 	
-	public Paciente(String cedula, String nombre, String telefono, String direccion, String sexo, String NHC, HistorialClinico historial, String tipoSangre, float peso, float estatura) {
-		super(cedula, nombre, telefono, direccion, sexo);
-		this.NHC = NHC;
-		this.historial = historial;
+	public Paciente(String nHC, String tipoSangre, float peso, float estatura, Persona miPersona) {
+		super(miPersona.getCedula(),miPersona.getNombre(),miPersona.getTelefono(),miPersona.getDireccion(),miPersona.getSexo());
+		this.nHC = nHC;
+		this.historial = new HistorialClinico();
 		this.tipoSangre = tipoSangre;
 		this.peso = peso;
 		this.estatura = estatura;
-		
 	}
-
+	
 	public String getNHC() {
-		return NHC;
+		return nHC;
 	}
 
 	public void setNHC(String nHC) {
-		NHC = nHC;
+		this.nHC = nHC;
 	}
 
 	public HistorialClinico getHistorial() {
