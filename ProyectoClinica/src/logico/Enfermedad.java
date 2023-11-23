@@ -6,14 +6,16 @@ public class Enfermedad {
 	private String[] sintomas;
 	private String[] precauciones;
 	private boolean vigilancia;
+	private int prioridadTriaje;
 
-	public Enfermedad(String id, String nombre, String[] sintomas, String[] precauciones, boolean vigilancia) {
+	public Enfermedad(String id, String nombre, String[] sintomas, String[] precauciones, boolean vigilancia, int prioridadTriaje) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.sintomas = sintomas;
 		this.precauciones = precauciones;
 		this.vigilancia = vigilancia;
+		this.setPrioridadTriaje(prioridadTriaje);
 	}
 	
 	public String getId() {
@@ -45,6 +47,14 @@ public class Enfermedad {
 	}
 	public void setVigilancia(boolean vigilancia) {
 		this.vigilancia = vigilancia;
+	}
+
+	public int getPrioridadTriaje() {
+		return prioridadTriaje;
+	}
+
+	public void setPrioridadTriaje(int prioridadTriaje) {
+		this.prioridadTriaje = prioridadTriaje;
 	}
 	
 	
