@@ -18,6 +18,8 @@ public class Vivienda {
 	public void setMisPersonas(ArrayList<Persona> misPersonas) {
 		this.misPersonas = misPersonas;
 	}
-	
+	public void insertarPersona(Persona miPersona) {
+		misPersonas.add(miPersona);
+	}
 
 }

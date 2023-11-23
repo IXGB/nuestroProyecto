@@ -1,30 +1,23 @@
 package logico;
 
+import java.util.ArrayList;
+
 public class Paciente extends Persona {
 
-	private String nhc; //Numero de historial clinico
 	private HistorialClinico historial;
 	private String tipoSangre;
 	private float peso;
 	private float estatura;
-	private boolean curado;
-	
-	public Paciente(String nhc, String tipoSangre, float peso, float estatura, Persona miPersona) {
-		super(miPersona.getCedula(),miPersona.getNombre(),miPersona.getTelefono(),miPersona.getDireccion(),miPersona.getSexo());
-		this.nhc = nhc;
-		this.historial = new HistorialClinico();
+	private ArrayList<Vacuna> misVacunas;
+
+	public Paciente(String nhc, String tipoSangre, float peso, float estatura, Persona miPersona, ArrayList<Vacuna> misVacunas) {
+		super(miPersona.getCedula(), miPersona.getNombre(), miPersona.getTelefono(), miPersona.getDireccion(),
+				miPersona.getSexo());
+		this.historial = new HistorialClinico(nhc);
 		this.tipoSangre = tipoSangre;
 		this.peso = peso;
 		this.estatura = estatura;
-		this.curado = historial.estaCurado();
-	}
-	
-	public String getNhc() {
-		return nhc;
-	}
-
-	public void setNhc(String nhc) {
-		this.nhc = nhc;
+		this.setMisVacunas(misVacunas);
 	}
 
 	public HistorialClinico getHistorial() {
@@ -59,69 +52,71 @@ public class Paciente extends Persona {
 		this.estatura = estatura;
 	}
 	
-	public boolean esSangreABPositivo()
-	{
+	public ArrayList<Vacuna> getMisVacunas() {
+		return misVacunas;
+	}
+
+	public void setMisVacunas(ArrayList<Vacuna> misVacunas) {
+		this.misVacunas = misVacunas;
+	}
+	public String getNhc() {
+		return historial.getNhc();
+	}
+
+	public boolean esSangreABPositivo() {
 		if (this.tipoSangre.equalsIgnoreCase("AB+")) {
-				return true;
+			return true;
 		}
 		return false;
 	}
-	
-	public boolean esSangreABNegativo()
-	{
+
+	public boolean esSangreABNegativo() {
 		if (this.tipoSangre.equalsIgnoreCase("AB-")) {
-				return true;
+			return true;
 		}
 		return false;
 	}
-	
-	public boolean esSangreAPositivo()
-	{
+
+	public boolean esSangreAPositivo() {
 		if (this.tipoSangre.equalsIgnoreCase("A+")) {
-				return true;
+			return true;
 		}
 		return false;
 	}
-	public boolean esSangreANegativo()
-	{
+
+	public boolean esSangreANegativo() {
 		if (this.tipoSangre.equalsIgnoreCase("A-")) {
-				return true;
+			return true;
 		}
 		return false;
 	}
-	public boolean esSangreBPositivo()
-	{
+
+	public boolean esSangreBPositivo() {
 		if (this.tipoSangre.equalsIgnoreCase("B+")) {
-				return true;
+			return true;
 		}
 		return false;
 	}
-	public boolean esSangreBNegativo()
-	{
+
+	public boolean esSangreBNegativo() {
 		if (this.tipoSangre.equalsIgnoreCase("B-")) {
-				return true;
+			return true;
 		}
 		return false;
 	}
-	public boolean esSangreOPositivo()
-	{
+
+	public boolean esSangreOPositivo() {
 		if (this.tipoSangre.equalsIgnoreCase("O+")) {
-				return true;
+			return true;
 		}
 		return false;
-	}public boolean esSangreONegativo()
-	{
+	}
+
+	public boolean esSangreONegativo() {
 		if (this.tipoSangre.equalsIgnoreCase("O-")) {
-				return true;
+			return true;
 		}
 		return false;
 	}
 
-	public boolean isCurado() {
-		return curado;
-	}
-
-	public void setCurado(boolean curado) {
-		this.curado = curado;
-	}
 }

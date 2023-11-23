@@ -2,7 +2,7 @@ package logico;
 
 public class Doctor extends Persona {
 
-	private String especializacion;
+	private String especializacion; //IS???
 	private String id;
 	
 	public Doctor(String cedula, String nombre, String telefono, String direccion, String sexo, String id, String especiaclizacion) {

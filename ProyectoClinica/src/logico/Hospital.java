@@ -66,7 +66,7 @@ public class Hospital {
 		return null;
 	}
 	
-	public Paciente buscarDoctorByNHC(String NHC) {
+	public Paciente buscarPacienteByNHC(String NHC) {
 		for(Persona aux:misPersonas)
 		{
 			if(aux instanceof Paciente&&((Paciente)aux).getNhc().equalsIgnoreCase(NHC))

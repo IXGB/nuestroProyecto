@@ -81,9 +81,9 @@ public class Consulta {
 	}
 
 	public int calcPrioridadTriaje() {
-		if (enfermedad.getPrioridadTriaje() == 1) { //Maxima Prioridad
+		if (enfermedad.getPrioridadTriaje() == 1) { // Maxima Prioridad
 			return 1;
-		} else if (enfermedad.getPrioridadTriaje() == 2) { //Maxima Prioridad
+		} else if (enfermedad.getPrioridadTriaje() == 2) { // Maxima Prioridad
 			return 2;
 		}
 		return 3;
