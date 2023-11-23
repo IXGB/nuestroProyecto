@@ -54,6 +54,28 @@ public class Hospital {
 	public static void setElHospital(Hospital elHospital) {
 		Hospital.elHospital = elHospital;
 	}
-
+	
+	public Doctor buscarDoctorById(String id) {
+		for(Persona aux:misPersonas)
+		{
+			if(aux instanceof Doctor&&((Doctor)aux).getId().equalsIgnoreCase(id))
+				{
+					return (Doctor)aux;
+				}
+		}
+		return null;
+	}
+	
+	public Paciente buscarDoctorByNHC(String NHC) {
+		for(Persona aux:misPersonas)
+		{
+			if(aux instanceof Paciente&&((Paciente)aux).getNhc().equalsIgnoreCase(NHC))
+				{
+					return (Paciente)aux;
+				}
+		}
+		return null;
+	}
+	
 
 }
