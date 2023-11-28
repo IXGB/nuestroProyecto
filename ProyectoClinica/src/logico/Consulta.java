@@ -9,11 +9,11 @@ public class Consulta {
 	private String descripcion;
 	private Enfermedad enfermedad;
 	private Vacuna miVacuna;
-	private String triaje; //Motivo de consulta
-	private int prioridadDeTriaje; //Del 1-3 siendo el 1 de mayor prioridad
+	private String triaje; // Motivo de consulta
+	private int prioridadDeTriaje; // Del 1-3 siendo el 1 de mayor prioridad
 
-	public Consulta(Doctor miDoctor, String descripcion, Enfermedad enfermedad,
-			Vacuna miVacuna, String triaje, int prioridadDeTriaje) {
+	public Consulta(Doctor miDoctor, String descripcion, Enfermedad enfermedad, Vacuna miVacuna, String triaje,
+			int prioridadDeTriaje) {
 		super();
 		fchConsulta = new Date();
 		this.miDoctor = miDoctor;
@@ -80,4 +80,13 @@ public class Consulta {
 		this.prioridadDeTriaje = prioridadDeTriaje;
 	}
 
+	public int calcPrioridadTriaje() {
+		if (enfermedad.getPrioridadTriaje() == 1) { // Maxima Prioridad
+			return 1;
+		} else if (enfermedad.getPrioridadTriaje() == 2) { // Maxima Prioridad
+			return 2;
+		}
+		return 3;
+
+	}
 }
