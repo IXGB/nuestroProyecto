@@ -7,7 +7,7 @@ public class HistorialClinico {
 
 	private String nhc; // Numero de historial clinico
 	private Date fchCreacion;
-	private ArrayList<Consulta> consultasImportantes;
+	private ArrayList<Consulta> consultasImportantes; //el doctor decide si son importante -CD
 
 	public HistorialClinico(String nhc) {
 		super();
