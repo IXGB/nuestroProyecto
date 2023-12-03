@@ -37,7 +37,7 @@ public class RegCita extends JDialog {
 		contentPanel.setLayout(null);
 		
 		JCalendar calendar = new JCalendar();
-		calendar.setBounds(10, 11, 184, 153);
+		calendar.setBounds(240, 64, 184, 153);
 		contentPanel.add(calendar);
 		{
 			JPanel buttonPane = new JPanel();
