@@ -8,12 +8,14 @@ public class Hospital {
 	private ArrayList<HistorialClinico>misHistoriales;
 	private ArrayList<Enfermedad>misEnfermedades;
 	private static Hospital elHospital=null;
+	private ArrayList<Usuario> misUsuarios;
 	
 	public Hospital() {
 		super();
 		this.misPersonas = new ArrayList<Persona>();
 		this.misHistoriales = new ArrayList<HistorialClinico>();
 		this.misEnfermedades = new ArrayList<Enfermedad>();
+		this.misUsuarios = new ArrayList<Usuario>();
 	}
 	
 	public static Hospital getInstance() {
@@ -55,6 +57,14 @@ public class Hospital {
 		Hospital.elHospital = elHospital;
 	}
 	
+	public ArrayList<Usuario> getMisUsuarios() {
+		return misUsuarios;
+	}
+
+	public void setMisUsuarios(ArrayList<Usuario> misUsuarios) {
+		this.misUsuarios = misUsuarios;
+	}
+
 	public Doctor buscarDoctorById(String id) {
 		for(Persona aux:misPersonas)
 		{
