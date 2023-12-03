@@ -8,6 +8,7 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+import javax.swing.text.MaskFormatter;
 
 import logico.Doctor;
 import logico.Hospital;
@@ -18,8 +19,10 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JRadioButton;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.awt.event.ActionEvent;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFormattedTextField;
 
 public class RegDoctor extends JDialog {
 
@@ -30,11 +33,13 @@ public class RegDoctor extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	private final JPanel panel = new JPanel();
 	private JTextField txtID;
-	private JTextField txtCedula;
 	private JTextField txtNombre;
 	private JTextField txtTelefono;
 	private JTextField txtDireccion;
 	private JComboBox<Object> cbxExeq;
+	private JFormattedTextField txtCedula;
+	private JRadioButton rdbtnF;
+	private JRadioButton rdbtnM;
 
 	/**
 	 * Launch the application.
@@ -51,8 +56,9 @@ public class RegDoctor extends JDialog {
 
 	/**
 	 * Create the dialog.
+	 * @throws ParseException 
 	 */
-	public RegDoctor() {
+	public RegDoctor() throws ParseException {
 		setTitle("Registrar Doctor");
 		setBounds(100, 100, 450, 257);
 		getContentPane().setLayout(new BorderLayout());
@@ -64,8 +70,13 @@ public class RegDoctor extends JDialog {
 		contentPanel.add(panel);
 		panel.setLayout(null);
 		
-		JRadioButton rdbtnF = new JRadioButton("F");
-		rdbtnF.setBounds(273, 115, 127, 25);
+		rdbtnF = new JRadioButton("F");
+		rdbtnF.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			rdbtnM.setSelected(false);
+			}
+		});
+		rdbtnF.setBounds(273, 115, 31, 25);
 		panel.add(rdbtnF);
 		{
 			JLabel lblNewLabel = new JLabel("ID:");
@@ -84,12 +95,6 @@ public class RegDoctor extends JDialog {
 			JLabel lblNewLabel_1 = new JLabel("C\u00E9dula:");
 			lblNewLabel_1.setBounds(184, 29, 56, 16);
 			panel.add(lblNewLabel_1);
-		}
-		{
-			txtCedula = new JTextField();
-			txtCedula.setBounds(235, 26, 116, 22);
-			panel.add(txtCedula);
-			txtCedula.setColumns(10);
 		}
 		{
 			JLabel lblNewLabel_2 = new JLabel("Nombre:");
@@ -140,16 +145,33 @@ public class RegDoctor extends JDialog {
 		lblNewLabel_6.setBounds(235, 90, 56, 16);
 		panel.add(lblNewLabel_6);
 		
-		JRadioButton rdbtnM = new JRadioButton("M");
+		rdbtnM = new JRadioButton("M");
+		rdbtnM.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rdbtnF.setSelected(false);
+			}
+		});
 		rdbtnM.setSelected(true);
-		rdbtnM.setBounds(224, 115, 127, 25);
+		rdbtnM.setBounds(224, 115, 40, 25);
 		panel.add(rdbtnM);
+		{
+			try {
+				MaskFormatter formatter = new MaskFormatter("###-#######-#");
+			txtCedula = new JFormattedTextField(formatter);
+			txtCedula.setBounds(250, 27, 116, 20);
+			panel.add(txtCedula);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			
+		}
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("Registar");
+				okButton.setEnabled(false);
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						if(cbxExeq.getSelectedIndex()!=0) {

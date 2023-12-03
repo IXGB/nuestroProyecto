@@ -15,6 +15,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.awt.event.ActionEvent;
 
 public class PrincipalVisual extends JFrame {
@@ -78,9 +79,15 @@ public class PrincipalVisual extends JFrame {
 		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Registrar Cita");
 		mntmNewMenuItem_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				RegCita regCita = new RegCita();
-				regCita.setModal(true);
-				regCita.setVisible(true);
+				RegCita regCita;
+				try {
+					regCita = new RegCita();
+					regCita.setModal(true);
+					regCita.setVisible(true);
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		mnCita.add(mntmNewMenuItem_6);

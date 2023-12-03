@@ -18,11 +18,14 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.MaskFormatter;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.awt.event.ActionEvent;
+import javax.swing.JFormattedTextField;
 
 public class RegCita extends JDialog {
 
@@ -32,7 +35,6 @@ public class RegCita extends JDialog {
 	private static final long serialVersionUID = -9146270308849717444L;
 	private final JPanel contentPanel = new JPanel();
 	private JTable tblDoctores;
-	private JTextField txtCedula;
 	private JTextField txtNombre;
 	private JTextField txtTelefono;
 	private JTextField txtDireccion;
@@ -41,6 +43,7 @@ public class RegCita extends JDialog {
 	private JSpinner spnHoraInicio;
 	private JSpinner spnHoraFin;
 	private JCalendar calendar;
+	private JFormattedTextField txtCedula;
 
 	
 	/**
@@ -58,8 +61,9 @@ public class RegCita extends JDialog {
 
 	/**
 	 * Create the dialog.
+	 * @throws ParseException 
 	 */
-	public RegCita() {
+	public RegCita() throws ParseException {
 		setTitle("Agendar una Cita");
 		Date fchActual = new Date();
 		Calendar fchActualMas30 = Calendar.getInstance();
@@ -113,11 +117,6 @@ public class RegCita extends JDialog {
 		rbtnFemenino.setBounds(171, 119, 47, 23);
 		panel_Pasciente.add(rbtnFemenino);
 		
-		txtCedula = new JTextField();
-		txtCedula.setBounds(68, 20, 187, 20);
-		panel_Pasciente.add(txtCedula);
-		txtCedula.setColumns(10);
-		
 		txtNombre = new JTextField();
 		txtNombre.setColumns(10);
 		txtNombre.setBounds(68, 48, 187, 20);
@@ -136,6 +135,14 @@ public class RegCita extends JDialog {
 		JLabel lblNewLabel_4 = new JLabel("Sexo: ");
 		lblNewLabel_4.setBounds(10, 123, 47, 14);
 		panel_Pasciente.add(lblNewLabel_4);
+		try {
+			MaskFormatter formatter = new MaskFormatter("###-#######-#");
+			txtCedula = new JFormattedTextField(formatter);
+			txtCedula.setBounds(68, 20, 187, 20);
+			panel_Pasciente.add(txtCedula);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		
 		JPanel panel_Fecha = new JPanel();
 		panel_Fecha.setBorder(new TitledBorder(null, "Fecha de la Cita", TitledBorder.LEADING, TitledBorder.TOP, null, null));
