@@ -32,13 +32,13 @@ public class RegCita extends JDialog {
 	public RegCita() {
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
-		contentPanel.setLayout(new FlowLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
-		{
-			JCalendar calendar = new JCalendar();
-			contentPanel.add(calendar);
-		}
+		contentPanel.setLayout(null);
+		
+		JCalendar calendar = new JCalendar();
+		calendar.setBounds(20, 11, 184, 153);
+		contentPanel.add(calendar);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -56,5 +56,4 @@ public class RegCita extends JDialog {
 			}
 		}
 	}
-
 }
