@@ -9,6 +9,8 @@ public class Hospital {
 	private ArrayList<Enfermedad>misEnfermedades;
 	private static Hospital elHospital=null;
 	private ArrayList<Usuario> misUsuarios;
+	private static int CodigoDoctor = 1;
+	private static int CodigoPaciente = 1;
 	
 	public Hospital() {
 		super();
@@ -65,6 +67,22 @@ public class Hospital {
 		this.misUsuarios = misUsuarios;
 	}
 
+	public static int getCodigoDoctor() {
+		return CodigoDoctor;
+	}
+
+	public static void setCodigoDoctor(int codigoDoctor) {
+		CodigoDoctor = codigoDoctor;
+	}
+
+	public static int getCodigoPaciente() {
+		return CodigoPaciente;
+	}
+
+	public static void setCodigoPaciente(int codigoPaciente) {
+		CodigoPaciente = codigoPaciente;
+	}
+
 	public Doctor buscarDoctorById(String id) {
 		for(Persona aux:misPersonas)
 		{
@@ -85,5 +103,21 @@ public class Hospital {
 				}
 		}
 		return null;
+	}
+
+	public void contarDoctor() {
+		CodigoDoctor++;
+	}
+	public void contarPaciente() {
+		CodigoPaciente++;
+	}
+
+	public void addPersona(Persona aux) {
+		misPersonas.add(aux);
+		if(aux instanceof Doctor)
+			contarDoctor();
+		else
+			contarPaciente();
+		
 	}
 }
