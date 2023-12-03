@@ -13,6 +13,7 @@ public class RegCita extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 
+	
 	/**
 	 * Launch the application.
 	 */
