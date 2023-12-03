@@ -18,6 +18,10 @@ import javax.swing.JSpinner;
 
 public class RegEnfermedad extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3119794586616135153L;
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtID;
 	private JTextField txtNombre;

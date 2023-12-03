@@ -23,6 +23,10 @@ import javax.swing.DefaultComboBoxModel;
 
 public class RegDoctor extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8041536731931685269L;
 	private final JPanel contentPanel = new JPanel();
 	private final JPanel panel = new JPanel();
 	private JTextField txtID;
@@ -30,7 +34,7 @@ public class RegDoctor extends JDialog {
 	private JTextField txtNombre;
 	private JTextField txtTelefono;
 	private JTextField txtDireccion;
-	private JComboBox cbxExeq;
+	private JComboBox<Object> cbxExeq;
 
 	/**
 	 * Launch the application.
@@ -74,7 +78,7 @@ public class RegDoctor extends JDialog {
 			txtID.setBounds(38, 26, 116, 22);
 			panel.add(txtID);
 			txtID.setColumns(10);
-			txtID.setText("D-"+Hospital.getInstance().getCodigoDoctor());
+			txtID.setText("D-"+Hospital.getCodigoDoctor());
 		}
 		{
 			JLabel lblNewLabel_1 = new JLabel("C\u00E9dula:");
@@ -126,8 +130,8 @@ public class RegDoctor extends JDialog {
 			panel.add(lblNewLabel_5);
 		}
 		
-		cbxExeq = new JComboBox();
-		cbxExeq.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Cardiologo", "Podologo"}));
+		cbxExeq = new JComboBox<Object>();
+		cbxExeq.setModel(new DefaultComboBoxModel<Object>(new String[] {"<Seleccione>", "Cardiologo", "Podologo"}));
 		cbxExeq.setToolTipText("");
 		cbxExeq.setBounds(83, 118, 106, 22);
 		panel.add(cbxExeq);

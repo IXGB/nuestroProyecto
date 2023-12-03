@@ -26,6 +26,10 @@ import java.awt.event.ActionEvent;
 
 public class RegCita extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9146270308849717444L;
 	private final JPanel contentPanel = new JPanel();
 	private JTable tblDoctores;
 	private JTextField txtCedula;
@@ -190,6 +194,10 @@ public class RegCita extends JDialog {
 				"Nombre", "EXEQUATUR"
 			}
 		) {
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = -1024742821047158370L;
 			boolean[] columnEditables = new boolean[] {
 				true, false
 			};

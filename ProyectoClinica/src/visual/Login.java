@@ -5,16 +5,19 @@ import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JFormattedTextField;
-import javax.swing.JPasswordField;
 
 public class Login extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4116032584153181645L;
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtUser;
 	private JPasswordField passwordField;

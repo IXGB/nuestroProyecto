@@ -19,9 +19,13 @@ import java.awt.event.ActionEvent;
 
 public class ListarCita extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 91411914069182076L;
 	private final JPanel contentPanel = new JPanel();
 	private JTable tblAgenda;
-	private JComboBox comboBox;
+	private JComboBox<Object> comboBox;
 	private JCalendar calendar;
 
 	/**
@@ -54,7 +58,7 @@ public class ListarCita extends JDialog {
 			contentPanel.add(panel_Doctor);
 			panel_Doctor.setLayout(null);
 			
-			comboBox = new JComboBox();
+			comboBox = new JComboBox<Object>();
 			comboBox.setBounds(10, 26, 256, 27);
 			panel_Doctor.add(comboBox);
 		}
@@ -88,6 +92,10 @@ public class ListarCita extends JDialog {
 				"Hora de Inicio", "Doctor", "Pasciente"
 			}
 		) {
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = -7946187111276830986L;
 			boolean[] columnEditables = new boolean[] {
 				false, false, false
 			};

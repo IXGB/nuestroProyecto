@@ -19,6 +19,10 @@ import java.util.Calendar;
 
 public class RegConsulta extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5167795281497040413L;
 	private final JPanel contentPanel = new JPanel();
 	private JTextField textField;
 	private JTextField textField_1;
@@ -150,7 +154,7 @@ public class RegConsulta extends JDialog {
 			btnYes.setBounds(203, 277, 127, 25);
 			panel.add(btnYes);
 			
-			JComboBox comboBox = new JComboBox();
+			JComboBox<Object> comboBox = new JComboBox<Object>();
 			comboBox.setBounds(82, 114, 133, 22);
 			panel.add(comboBox);
 		}
