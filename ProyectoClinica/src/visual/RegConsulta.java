@@ -129,6 +129,7 @@ public class RegConsulta extends JDialog {
 			}
 			{
 				JSpinner spinner = new JSpinner();
+				spinner.setEnabled(false);
 				spinner.setModel(new SpinnerDateModel(new Date(1701403200000L), null, null, Calendar.DAY_OF_YEAR));
 				spinner.setBounds(129, 26, 127, 22);
 				panel.add(spinner);
