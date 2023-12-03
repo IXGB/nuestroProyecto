@@ -23,7 +23,10 @@ public class PrincipalVisual extends JFrame {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 9104132929861447962L;
+	/**
+	 * 
+	 */
 	private JPanel contentPane;
 	private JMenuItem mnitMiHistorial;
 	private JMenuItem mnitHistorialPaciente;

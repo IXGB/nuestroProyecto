@@ -2,44 +2,45 @@ package visual;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
-import logico.Almacen;
 import logico.Doctor;
 import logico.Hospital;
 import logico.Paciente;
 import logico.Persona;
 import logico.Usuario;
-import logico.Vino;
-
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
-import javax.swing.JComboBox;
-import javax.swing.JTable;
-import javax.swing.DefaultComboBoxModel;
-import java.awt.Font;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.ListSelectionModel;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 
 public class CrearUsuario extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6356805486808585626L;
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtUsername;
 	private JPanel panel;
 	private JTextField txtPassword;
-	private JComboBox cbxTipo;
+	private JComboBox<Object> cbxTipo;
 	private static DefaultTableModel model;
 	private static Object[] row;
 	private Persona selected = null;
@@ -77,20 +78,20 @@ public class CrearUsuario extends JDialog {
 		panel = new JPanel();
 		panel.setLayout(null);
 		panel.setBorder(new TitledBorder(null, "Ingrese sus datos", TitledBorder.CENTER, TitledBorder.TOP, null, null));
-		panel.setBounds(12, 13, 408, 192);
+		panel.setBounds(12, 13, 408, 128);
 		contentPanel.add(panel);
 		
 		JLabel label = new JLabel("Usuario:");
-		label.setBounds(36, 47, 56, 16);
+		label.setBounds(10, 24, 56, 16);
 		panel.add(label);
 		
 		JLabel label_1 = new JLabel("Contrase\u00F1a:");
-		label_1.setBounds(36, 94, 82, 16);
+		label_1.setBounds(10, 55, 66, 16);
 		panel.add(label_1);
 		
 		txtUsername = new JTextField();
 		txtUsername.setColumns(10);
-		txtUsername.setBounds(116, 44, 173, 22);
+		txtUsername.setBounds(81, 15, 173, 22);
 		panel.add(txtUsername);
 		
 		txtPassword = new JTextField();
@@ -101,14 +102,14 @@ public class CrearUsuario extends JDialog {
 			}
 		});
 		txtPassword.setColumns(10);
-		txtPassword.setBounds(116, 91, 173, 22);
+		txtPassword.setBounds(81, 52, 173, 22);
 		panel.add(txtPassword);
 		
-		JLabel lblNewLabel = new JLabel("Tipo de Usuario:");
-		lblNewLabel.setBounds(36, 137, 115, 16);
+		JLabel lblNewLabel = new JLabel("Tipo:");
+		lblNewLabel.setBounds(10, 93, 66, 16);
 		panel.add(lblNewLabel);
 		
-		cbxTipo = new JComboBox();
+		cbxTipo = new JComboBox<Object>();
 		cbxTipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(cbxTipo.getSelectedIndex()<1) {
@@ -118,13 +119,14 @@ public class CrearUsuario extends JDialog {
 			}
 		});
 		cbxTipo.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		cbxTipo.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Admin", "Doctor", "Paciente"}));
-		cbxTipo.setBounds(138, 134, 106, 22);
+		cbxTipo.setModel(new DefaultComboBoxModel<Object>(new String[] {"<Seleccione>", "Admin", "Doctor", "Secretario"}));
+		cbxTipo.setBounds(81, 89, 106, 22);
 		panel.add(cbxTipo);
 		
 		panPersona = new JScrollPane();
+		panPersona.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		panPersona.setViewportBorder(new TitledBorder(null, "Seleccione Persona", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panPersona.setBounds(12, 210, 408, 180);
+		panPersona.setBounds(12, 152, 408, 250);
 		contentPanel.add(panPersona);
 		
 		String[] header = {"Código","Nombre"};
