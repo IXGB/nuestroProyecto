@@ -155,7 +155,7 @@ public class RegConsulta extends JDialog {
 			
 			cbxSangre = new JComboBox<Object>();
 			cbxSangre.setModel(new DefaultComboBoxModel<Object>(new String[] {"<Seleccione>", "AB+", "AB-", "A+", "A-", "B+", "B-", "O+", "O-"}));
-			cbxSangre.setBounds(109, 93, 91, 20);
+			cbxSangre.setBounds(109, 93, 127, 20);
 			panel.add(cbxSangre);
 		}
 		{
@@ -216,14 +216,32 @@ public class RegConsulta extends JDialog {
 			panel.add(rbtnYes);
 
 			rbtnRojo = new JRadioButton("Rojo");
+			rbtnRojo.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					rbtnAmarillo.setSelected(false);
+					rbtnVerde.setSelected(false);
+				}
+			});
 			rbtnRojo.setBounds(129, 84, 56, 23);
 			panel.add(rbtnRojo);
 
 			rbtnAmarillo = new JRadioButton("Amarillo");
+			rbtnAmarillo.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					rbtnVerde.setSelected(false);
+					rbtnRojo.setSelected(false);
+				}
+			});
 			rbtnAmarillo.setBounds(203, 84, 84, 23);
 			panel.add(rbtnAmarillo);
 
 			rbtnVerde = new JRadioButton("Verde");
+			rbtnVerde.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					rbtnAmarillo.setSelected(false);
+					rbtnRojo.setSelected(false);
+				}
+			});
 			rbtnVerde.setSelected(true);
 			rbtnVerde.setBounds(291, 84, 70, 23);
 			panel.add(rbtnVerde);
