@@ -1,6 +1,10 @@
 package logico;
 
 public class Doctor extends Persona {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String exequatur; //EXEQUATUR, especialidad
 	private String id;
 	

@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 public class Paciente extends Persona {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private HistorialClinico historial;
 	private String tipoSangre;
 	private float peso;
