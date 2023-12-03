@@ -120,4 +120,25 @@ public class Hospital {
 			contarPaciente();
 		
 	}
+
+	public void addUsuario(Usuario aux) {
+		misUsuarios.add(aux);
+	}
+
+	public boolean verificarUsuario(String username, String password) {
+		for(Usuario aux:misUsuarios) {
+			if(aux.getUsername().equalsIgnoreCase(username)&&aux.getPassword().equals(password))
+				return true;
+		}
+		return false;
+		
+	}
+
+	public Usuario buscarUsuarioByName(String username) {
+		for(Usuario aux:misUsuarios) {
+			if(aux.getUsername().equalsIgnoreCase(username))
+				return aux;
+		}
+		return null;
+	}
 }

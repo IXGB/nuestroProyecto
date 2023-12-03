@@ -6,11 +6,16 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+
+import logico.Hospital;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Login extends JDialog {
 
@@ -39,6 +44,13 @@ public class Login extends JDialog {
 	 * Create the dialog.
 	 */
 	public Login() {
+		if(Hospital.getInstance().getMisUsuarios()==null)
+		{
+			JOptionPane.showMessageDialog(null, "Aun no hay usuarios creados. Cree el usuario de administración", "Falta de Usuario", JOptionPane.ERROR_MESSAGE);
+			CrearUsuario crearUsuario = new CrearUsuario(false);
+			crearUsuario.setModal(true);
+			crearUsuario.setVisible(true);
+		}
 		setTitle("Login");
 		setBounds(100, 100, 410, 261);
 		getContentPane().setLayout(new BorderLayout());
@@ -78,10 +90,21 @@ public class Login extends JDialog {
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
-				JButton okButton = new JButton("OK");
-				okButton.setActionCommand("OK");
-				buttonPane.add(okButton);
-				getRootPane().setDefaultButton(okButton);
+				JButton btnLogin = new JButton("Login");
+				btnLogin.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						if(Hospital.getInstance().verificarUsuario(txtUser.getText(),passwordField.getPassword().toString())) {
+							JOptionPane.showMessageDialog(null, "Operación Satisfactoria", "Login", JOptionPane.INFORMATION_MESSAGE);
+							PrincipalVisual principalVisual = new PrincipalVisual(Hospital.getInstance().buscarUsuarioByName(txtUser.getText()));
+							//principalVisual.setModal(true);
+							principalVisual.setVisible(true);
+							dispose();
+						}
+					}
+				});
+				btnLogin.setActionCommand("OK");
+				buttonPane.add(btnLogin);
+				getRootPane().setDefaultButton(btnLogin);
 			}
 			{
 				JButton cancelButton = new JButton("Cancel");

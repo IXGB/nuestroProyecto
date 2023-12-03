@@ -32,10 +32,6 @@ public class Paciente extends Persona {
 		return tipoSangre;
 	}
 
-	public void setTipoSangre(String tipoSangre) {
-		this.tipoSangre = tipoSangre;
-	}
-
 	public float getPeso() {
 		return peso;
 	}
