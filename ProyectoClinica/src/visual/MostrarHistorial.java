@@ -21,7 +21,7 @@ import javax.swing.SpinnerDateModel;
 import java.util.Date;
 import java.util.Calendar;
 
-public class mostrarHistorial extends JDialog {
+public class MostrarHistorial extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JTable table;
@@ -37,7 +37,7 @@ public class mostrarHistorial extends JDialog {
 	 */
 	public static void main(String[] args) {
 		try {
-			mostrarHistorial dialog = new mostrarHistorial();
+			MostrarHistorial dialog = new MostrarHistorial();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -48,7 +48,7 @@ public class mostrarHistorial extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public mostrarHistorial() {
+	public MostrarHistorial() {
 		setTitle("Historial Cl\u00EDnico");
 		setBounds(100, 100, 650, 529);
 		getContentPane().setLayout(new BorderLayout());
