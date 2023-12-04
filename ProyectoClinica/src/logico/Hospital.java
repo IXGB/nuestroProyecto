@@ -7,6 +7,9 @@ public class Hospital {
 	private ArrayList<Persona>misPersonas;
 	private ArrayList<HistorialClinico>misHistoriales;
 	private ArrayList<Enfermedad>misEnfermedades;
+	private ArrayList<Vivienda>misViviendas;
+	private ArrayList<Cita>misCitas;
+	private ArrayList<Vacuna>misVacunas;
 	private static Hospital elHospital=null;
 	private ArrayList<Usuario> misUsuarios;
 	private static int CodigoDoctor = 1;
@@ -124,7 +127,23 @@ public class Hospital {
 	public void addUsuario(Usuario aux) {
 		misUsuarios.add(aux);
 	}
-
+	
+	public void addEnfermedad(Enfermedad enfermedad) {
+		misEnfermedades.add(enfermedad);
+	}
+	
+	public void addVivienda(Vivienda vivienda) {
+		misViviendas.add(vivienda);
+	}
+	
+	public void addCita(Cita cita) {
+		misCitas.add(cita);
+	}
+	
+	public void addVacuna(Vacuna vacuna) {
+		misVacunas.add(vacuna);
+	}
+	
 	public boolean verificarUsuario(String username, String password) {
 		for(Usuario aux:misUsuarios) {
 			if(aux.getUsername().equalsIgnoreCase(username)&&aux.getPassword().equals(password))
