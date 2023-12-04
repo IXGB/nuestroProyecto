@@ -5,10 +5,30 @@ import java.util.ArrayList;
 public class Vivienda {
 
 	private ArrayList<Persona> misPersonas;
+	private String direccion;
+	private int numVivienda;
 
-	public Vivienda() {
+	public Vivienda(String direccion, int numVivienda) {
 		super();
 		this.misPersonas = new ArrayList<Persona>();
+		this.direccion = direccion;
+		this.numVivienda = numVivienda;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public int getNumVivienda() {
+		return numVivienda;
+	}
+
+	public void setNumVivienda(int numVivienda) {
+		this.numVivienda = numVivienda;
 	}
 
 	public ArrayList<Persona> getMisPersonas() {
