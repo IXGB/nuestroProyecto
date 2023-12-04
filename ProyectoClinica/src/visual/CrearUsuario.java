@@ -82,16 +82,16 @@ public class CrearUsuario extends JDialog {
 		contentPanel.add(panel);
 		
 		JLabel label = new JLabel("Usuario:");
-		label.setBounds(10, 24, 56, 16);
+		label.setBounds(10, 32, 56, 16);
 		panel.add(label);
 		
 		JLabel label_1 = new JLabel("Contrase\u00F1a:");
-		label_1.setBounds(10, 55, 66, 16);
+		label_1.setBounds(10, 64, 89, 16);
 		panel.add(label_1);
 		
 		txtUsername = new JTextField();
 		txtUsername.setColumns(10);
-		txtUsername.setBounds(81, 15, 173, 22);
+		txtUsername.setBounds(91, 29, 173, 22);
 		panel.add(txtUsername);
 		
 		txtPassword = new JTextField();
@@ -102,7 +102,7 @@ public class CrearUsuario extends JDialog {
 			}
 		});
 		txtPassword.setColumns(10);
-		txtPassword.setBounds(81, 52, 173, 22);
+		txtPassword.setBounds(91, 61, 173, 22);
 		panel.add(txtPassword);
 		
 		JLabel lblNewLabel = new JLabel("Tipo:");
@@ -120,7 +120,7 @@ public class CrearUsuario extends JDialog {
 		});
 		cbxTipo.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		cbxTipo.setModel(new DefaultComboBoxModel<Object>(new String[] {"<Seleccione>", "Admin", "Doctor", "Secretario"}));
-		cbxTipo.setBounds(81, 89, 106, 22);
+		cbxTipo.setBounds(58, 90, 106, 22);
 		panel.add(cbxTipo);
 		
 		panPersona = new JScrollPane();

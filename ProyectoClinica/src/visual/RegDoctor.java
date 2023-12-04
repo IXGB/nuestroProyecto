@@ -76,7 +76,7 @@ public class RegDoctor extends JDialog {
 			rdbtnM.setSelected(false);
 			}
 		});
-		rdbtnF.setBounds(273, 115, 31, 25);
+		rdbtnF.setBounds(273, 115, 40, 25);
 		panel.add(rdbtnF);
 		{
 			JLabel lblNewLabel = new JLabel("ID:");

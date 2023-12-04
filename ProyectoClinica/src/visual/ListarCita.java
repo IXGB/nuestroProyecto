@@ -89,7 +89,7 @@ public class ListarCita extends JDialog {
 			new Object[][] {
 			},
 			new String[] {
-				"Hora de Inicio", "Doctor", "Pasciente"
+				"Hora de Inicio", "Doctor", "Paciente"
 			}
 		) {
 			/**

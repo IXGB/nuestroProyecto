@@ -109,6 +109,21 @@ public class PrincipalVisual extends JFrame {
 				regEnfermedad.setVisible(true);
 			}
 		});
+		
+		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Registrar Doctor");
+		mntmNewMenuItem_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					RegDoctor regDoctor = new RegDoctor();
+					regDoctor.setModal(true);
+					regDoctor.setVisible(true);
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		mnAdmin.add(mntmNewMenuItem_3);
 		mnAdmin.add(mntmNewMenuItem_8);
 		
 		JMenuItem mntmNewMenuItem_9 = new JMenuItem("Registrar Vacuna");
