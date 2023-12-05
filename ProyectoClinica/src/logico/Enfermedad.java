@@ -1,7 +1,13 @@
 package logico;
 
-public class Enfermedad {
-	private String id;
+import java.io.Serializable;
+
+public class Enfermedad implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String nombre;
 	private String[] sintomas;
 	private String[] precauciones;
@@ -9,9 +15,9 @@ public class Enfermedad {
 	private boolean vigilancia;
 	private int prioridadTriaje;
 
-	public Enfermedad(String id, String nombre, String[] sintomas, String[] precauciones, String procedimientos, boolean vigilancia, int prioridadTriaje) {
+	public Enfermedad(String nombre, String[] sintomas, String[] precauciones, String procedimientos, boolean vigilancia, int prioridadTriaje) {
 		super();
-		this.id = id;
+		
 		this.nombre = nombre;
 		this.sintomas = sintomas;
 		this.precauciones = precauciones;
@@ -19,13 +25,7 @@ public class Enfermedad {
 		this.vigilancia = vigilancia;
 		this.setPrioridadTriaje(prioridadTriaje);
 	}
-	
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
+
 	public String getNombre() {
 		return nombre;
 	}

@@ -160,4 +160,6 @@ public class Hospital {
 		}
 		return null;
 	}
+	
+	public Enfermedad buscarEnfermedadByName(String nombreEnferm)
 }
